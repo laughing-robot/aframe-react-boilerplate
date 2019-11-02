@@ -6,7 +6,6 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ArticleWindow from "./components/articlewindow";
-import BigBox from "./components/bigbox";
 
 class App extends React.Component {
   constructor(props) {
