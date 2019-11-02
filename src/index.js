@@ -5,8 +5,8 @@ import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './components/articlewindow';
 import ArticleWindow from "./components/articlewindow";
+import BigBox from "./components/bigbox";
 
 class App extends React.Component {
   constructor(props) {
@@ -37,9 +37,8 @@ class App extends React.Component {
         <Entity text={{value: 'Hello, A-Frame React!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
 
 
-
-          <ArticleWindow x={2} />
-          <ArticleWindow x={1}/>
+          <ArticleWindow pos={[1, 1, 4]} rot={[0, 0, 0]} />
+          <ArticleWindow pos={[1, 1, 2]} rot={[0, 0, 0]} />
 
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
