@@ -3,24 +3,20 @@ import 'aframe-animation-component';
 import 'aframe-particle-system-component';
 import 'babel-polyfill';
 import React from 'react';
-import {Entity} from "aframe-react";
+import BigBox from "./bigbox";
 
-class Wall extends React.Component {
+class Wall extends BigBox {
+
+    WIDTH = '20';
+    HEIGHT = '10';
+    DEPTH = '0.05';
+
 
     constructor(props) {
         super(props);
-        this.state.dims = {primitive: 'box', width: '20', height: '10', depth: '0.05'};
-    }
-
-
-    render () {
-        (
-         <Entity>
-           position={this.state.pos}
-           rotation={this.state.rot}
-         </Entity>
-        );
-
+        this.state.dims = {primitive: 'box', width: this.WIDTH, height: this.HEIGHT, depth: this.DEPTH};
     }
 
 }
+
+export default Wall;

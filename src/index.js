@@ -6,6 +6,7 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ArticleWindow from "./components/articlewindow";
+import Wall from "./components/wall";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +39,11 @@ class App extends React.Component {
 
           <ArticleWindow pos={[1, 1, 4]} rot={[0, 0, 0]} />
           <ArticleWindow pos={[1, 1, 2]} rot={[0, 0, 0]} />
+          <Wall/>
+          <Wall/>
+          <Wall/>
+          <Wall/>
+
 
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>

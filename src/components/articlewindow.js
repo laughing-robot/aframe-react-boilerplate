@@ -2,14 +2,18 @@ import 'aframe';
 import 'aframe-animation-component';
 import 'aframe-particle-system-component';
 import 'babel-polyfill';
-import {Entity, Scene} from 'aframe-react';
 import BigBox from './bigbox';
 import React from 'react';
 
 class ArticleWindow extends BigBox {
+
+    WIDTH = '1';
+    HEIGHT = '0.75';
+    DEPTH = '0.05';
+
     constructor(props) {
         super(props);
-        this.state.dims = {primitive: 'box', width: '1', height: '0.75', depth: '0.05'};
+        this.state.dims = {primitive: 'box', width: this.WIDTH, height: this.HEIGHT, depth: this.DEPTH};
     }
 
     changeColor() {
@@ -17,10 +21,6 @@ class ArticleWindow extends BigBox {
         this.setState({
             color: colors[Math.floor(Math.random() * colors.length)]
         });
-    }
-
-    render() {
-        return super.render();
     }
 }
 
