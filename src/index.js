@@ -6,7 +6,8 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ArticleWindow from "./components/articlewindow";
-import Wall from "./components/wall";
+import {WIDTH, HEIGHT, Wall} from "./components/wall";
+import {CWIDTH, Ceiling} from "./components/ceiling";
 
 class App extends React.Component {
   constructor(props) {
@@ -37,12 +38,13 @@ class App extends React.Component {
         <Entity text={{value: 'Hello, A-Frame React!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
 
 
-          <ArticleWindow pos={[1, 1, 4]} rot={[0, 0, 0]} />
-          <ArticleWindow pos={[1, 1, 2]} rot={[0, 0, 0]} />
-          <Wall/>
-          <Wall/>
-          <Wall/>
-          <Wall/>
+          <Wall pos={[0, -1*parseFloat(WIDTH)/2, parseFloat(HEIGHT)/2]} material={{color:'white', opacity: '0.2'}}/>
+          <Wall pos={[0, parseFloat(WIDTH)/2, parseFloat(HEIGHT)/2]} material={{color:'white', opacity: '0.2'}}/>
+          <Wall pos={[parseFloat(WIDTH)/2, 0, parseFloat(HEIGHT)/2]} rot={[0, 0, 90]} material={{color:'white', opacity: '0.2'}}/>
+          <Wall pos={[-1*parseFloat(WIDTH)/2, 0, parseFloat(HEIGHT)/2]} rot={[0, 0, 90]} material={{color:'white', opacity: '0.2'}}/>
+          <Ceiling pos={[0,0,HEIGHT]} rot={[90, 0, 0]}/>
+          <Ceiling pos={[0,0,0]} rot={[90, 0, 0]}/>
+
 
 
         <Entity primitive="a-camera">

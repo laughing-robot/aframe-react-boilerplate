@@ -4,21 +4,19 @@ import 'aframe-particle-system-component';
 import 'babel-polyfill';
 import React from 'react';
 import BigBox from "./bigbox";
+import {WIDTH} from "./wall";
 
 
-let WIDTH = '20';
-let HEIGHT = '10';
+let CWIDTH = (parseFloat(WIDTH)).toString();
 let DEPTH = '0.05';
 
-class Wall extends BigBox {
-
+class Ceiling extends BigBox {
 
     constructor(props) {
         super(props);
-        this.state.dims = {primitive: 'box', width: WIDTH, height: HEIGHT, depth: DEPTH};
+        this.state.dims = {primitive: 'box', width: CWIDTH, height: CWIDTH, depth: DEPTH};
     }
 
 }
 
-export default Wall;
-export {WIDTH, HEIGHT, DEPTH, Wall};
+export {CWIDTH, Ceiling};

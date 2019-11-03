@@ -11,6 +11,7 @@ class BigBox extends React.Component {
         let pos = {x: 0, y: 0, z: 0};
         let rot = {x: 0, y: 0, z: 0};
         let dims = {primitive: 'box', width: 1, height: 1, depth: 1};
+        let material = {color: 'red', opacity: 0.6};
 
         if(props.pos != null) {
             pos = {x: props.pos[0], y: props.pos[2], z: props.pos[1]};
@@ -24,7 +25,11 @@ class BigBox extends React.Component {
             dims = {primitive: 'box', width: props.dims[0], height: props.dims[1], depth: props.dims[2]};
         }
 
-        this.state = {pos: pos, rot: rot, dims: dims};
+        if(props.material != null) {
+            material = props.material;
+        }
+
+        this.state = {pos: pos, rot: rot, dims: dims, material: material};
     }
 
     changeColor() {
@@ -38,7 +43,7 @@ class BigBox extends React.Component {
         return (
             <Entity id="box"
                     geometry={this.state.dims}
-                    material={{color: this.state.color, opacity: 0.6}}
+                    material={this.state.material}
                     position={this.state.pos}
                     rotation={this.state.rot}
                     events={{click: this.changeColor.bind(this)}}>
