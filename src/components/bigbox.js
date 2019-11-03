@@ -44,6 +44,7 @@ class BigBox extends React.Component {
             <Entity id="box"
                     geometry={this.state.dims}
                     material={this.state.material}
+                    src={this.props.texture}
                     position={this.state.pos}
                     rotation={this.state.rot}
                     events={{click: this.changeColor.bind(this)}}>

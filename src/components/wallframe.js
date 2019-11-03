@@ -46,7 +46,7 @@ class WallFrame extends Wall {
             let slatCol = [];
             for(j = 0; j < cols; ++j) {
                 slatCol.push(<ArticleWindow pos={[parseFloat(this.state.pos.x) + width/2 - fwidth/2 - realwidth*j - bufside, this.state.pos.z
-                    , realheight*i+buftop + fheight/2]} dims={this.state.framedims}
+                    , realheight*i+buftop + fheight/2]} dims={this.state.framedims} src={this.props.src[i+j]}
                                             material={{color:'white', opacity:'0.6'}} />);
             }
 

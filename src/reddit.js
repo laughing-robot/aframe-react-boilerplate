@@ -1,4 +1,4 @@
-import 'snoowrap';
+import {snoowrap} from 'snoowrap';
 
 function fetchAnonymousToken() {
     const form = new FormData();

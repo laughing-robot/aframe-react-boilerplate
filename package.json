@@ -7,6 +7,7 @@
     "aframe-animation-component": "^3.2.5",
     "aframe-particle-system-component": "^1.0.8",
     "aframe-react": "^4.0.x",
+    "async_hooks": "^1.0.0",
     "babel-polyfill": "^6.3.14",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
