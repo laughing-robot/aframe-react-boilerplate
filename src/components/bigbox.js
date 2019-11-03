@@ -14,11 +14,11 @@ class BigBox extends React.Component {
         let material = {color: 'red', opacity: 0.6};
 
         if(props.pos != null) {
-            pos = {x: props.pos[0], y: props.pos[2], z: props.pos[1]};
+            pos = {x: props.pos[0].toString(), y: props.pos[2].toString(), z: props.pos[1].toString()};
         }
 
         if(props.rot != null) {
-            rot = {x: props.rot[0], y: props.rot[2], z: props.rot[1]};
+            rot = {x: props.rot[0].toString(), y: props.rot[2].toString(), z: props.rot[1].toString()};
         }
 
         if(props.dims != null) {

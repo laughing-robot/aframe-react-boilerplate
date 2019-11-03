@@ -5,9 +5,9 @@ import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ArticleWindow from "./components/articlewindow";
-import {WIDTH, HEIGHT, Wall} from "./components/wall";
-import {CWIDTH, Ceiling} from "./components/ceiling";
+import {HEIGHT, Wall, WIDTH} from "./components/wall";
+import {Ceiling} from "./components/ceiling";
+import WallFrame from "./components/wallframe";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +38,9 @@ class App extends React.Component {
         <Entity text={{value: 'Hello, A-Frame React!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
 
 
-          <Wall pos={[0, -1*parseFloat(WIDTH)/2, parseFloat(HEIGHT)/2]} material={{color:'white', opacity: '0.2'}}/>
+          <WallFrame pos={[0, -1*parseFloat(WIDTH)/2, parseFloat(HEIGHT)/2]} material={{color:'white', opacity: '0.2'}}
+          framedims={[5,7,0.05]} framenums={{rows: '1', cols:'3'}}/>
+
           <Wall pos={[0, parseFloat(WIDTH)/2, parseFloat(HEIGHT)/2]} material={{color:'white', opacity: '0.2'}}/>
           <Wall pos={[parseFloat(WIDTH)/2, 0, parseFloat(HEIGHT)/2]} rot={[0, 0, 90]} material={{color:'white', opacity: '0.2'}}/>
           <Wall pos={[-1*parseFloat(WIDTH)/2, 0, parseFloat(HEIGHT)/2]} rot={[0, 0, 90]} material={{color:'white', opacity: '0.2'}}/>
